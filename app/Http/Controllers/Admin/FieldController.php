@@ -64,14 +64,20 @@ class FieldController extends Controller
     {
         abort_if(Gate::denies('field_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $field->delete();
+        $field->fieldOfferFields()->forceDelete();
+        $field->forceDelete();
 
         return back();
     }
 
     public function massDestroy(MassDestroyFieldRequest $request)
     {
-        Field::whereIn('id', request('ids'))->delete();
+        $fields = Field::whereIn('id', request('ids'))->get();
+        
+        foreach($fields as $field) {
+            $field->fieldOfferFields()->forceDelete();
+            $field->forceDelete();
+        }
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

@@ -54,23 +54,18 @@
                             <td>
                                 {{ $offer->title ?? '' }}
                             </td>
-                            {{-- <td>
-                                @if($offer->video)
-                                    <a href="{{ $offer->video->getUrl() }}" target="_blank">
-                                        {{ trans('global.view_file') }}
-                                    </a>
-                                @endif
-                            </td> --}}
-                            <td>
+                            <td >
                                 @foreach($offer->image->slice(0, 5) as $key => $media)
-                                    <a href="{{ $media->getUrl() }}" target="_blank" style="display: inline-block">
+                                    <a href="{{ $media->getUrl() }}" class="border" target="_blank" style="display: inline-block">
                                         <img src="{{ $media->getUrl('thumb') }}">
                                     </a>
                                 @endforeach
+                                @if(count($offer->image) > 5)
+                                    <a class="ml-1" style="display: inline-block">
+                                        +{{ count($offer->image)-5 }} more
+                                    </a>
+                                @endif
                             </td>
-                            {{-- <td>
-                                {{ $offer->video_url ?? '' }}
-                            </td> --}}
                             
                             <td>
                                 <a href="{{ $offer->link }}" target="_blank" class="btn btn-sm btn-warning">

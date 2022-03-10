@@ -79,7 +79,6 @@ class OfferController extends Controller
 
     public function update(UpdateOfferRequest $request, Offer $offer)
     {
-        
         $offer->update($request->all());
         
         $offer->offerOfferFields()->forceDelete();

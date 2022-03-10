@@ -21,6 +21,11 @@
             }
             body {
                 font-family: 'Nunito';
+                background-color: #f5f3f3;
+            }
+            .card, .details-card, .bg-white {
+                background-color: #ffffff!important;
+                border-radius: 15px!important;
             }
             #mainCarousel {
                 max-width: 100%;
@@ -39,7 +44,8 @@
             #mainCarousel .carousel__slide {
                 width: 100%;
                 padding: 0;
-                max-height: 350px;
+                max-height: 550px;
+                overflow-y: hidden;
             }
 
             #mainCarousel .carousel__button.is-prev {
@@ -48,6 +54,17 @@
 
             #mainCarousel .carousel__button.is-next {
                 right: -1.5rem;
+            }
+            
+            @media only screen and (max-width: 600px) {
+                
+                #mainCarousel .carousel__button.is-prev {
+                    left: 10px;
+                }
+
+                #mainCarousel .carousel__button.is-next {
+                    right: 10px;
+                }
             }
 
             #mainCarousel .carousel__button:focus {
@@ -98,6 +115,9 @@
             .fancybox__button--thumbs {
                 display: none;
             }
+            .cursor-pointer {
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
@@ -105,13 +125,13 @@
             <br><br>
             <div class="w-100 m-auto">
                 <div class="row d-flex align-items-stretch justify-content-between">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
-                        <div class="pt-4 pb-4 pl-5 pr-5 border-carousell h-100">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="bg-white pt-4 pb-4 p-2 pl-lg-5 pr-lg-5 border-carousell h-100">
                             <h3 class="mb-3">
                                 <b>{{ $offer->title }}</b>
                             </h3>
                             
-                            <div id="mainCarousel" class="carousel w-10/12 max-w-5xl mx-auto">
+                            <div id="mainCarousel" class="carousel w-10/12 max-w-5xl mx-auto cursor-pointer">
                                 
                                 @if($offer->video && $offer->video->getFullUrl())
                                     <div class="carousel__slide"
@@ -177,7 +197,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 d-none d-lg-block">
+                    {{-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 d-none d-lg-block">
                         <div class="details-card h-100">
                             <h4 class="mt-1">
                                 Some tehnical details
@@ -206,7 +226,7 @@
                                 </div>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             
@@ -233,10 +253,11 @@
                 </div>
             </div>
             
-            <div class="mt-4 p-1 mb-5">
+            <div class="details-card mt-5 mb-5">
                 <h5 class="w-100">
                    Description
                 </h5>
+                <hr>
                 
                 <div class="w-100">
                     {!! $offer->description !!}

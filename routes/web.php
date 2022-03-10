@@ -48,3 +48,6 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
     }
 });
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});

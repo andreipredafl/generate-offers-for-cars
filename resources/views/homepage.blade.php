@@ -14,18 +14,23 @@
 
     </head>
     <body>
-        <div class="container mt-5" style="color: #3B90D3;">
+        <div class="container mt-5 text-center" style="color: #3B90D3;">
             
-            <h1 class="mt-5">Nothing to see here</h1>
+            <h1 class="mt-5">
+                <br><br>
+                Nothing to see here..
+            </h1>
             
             <div class="mt-5 ml-3">
                 <h5>If you want an offer for a car you can contact us</h5>
                 <h5>Email: contact@domain.com</h5>
             </div>
             
-            <div class="mt-5">
+            <div class="col-md-10 m-auto">
                 <img src="{{ asset('/images/home-cars.png') }}" alt="Image with cars" class="img-fluid">
             </div>
+            
+            <a href="{{ route('login') }}" class="mt-5">Are you an admin? Login here</a>
         </div>
     </body>
 </html>
