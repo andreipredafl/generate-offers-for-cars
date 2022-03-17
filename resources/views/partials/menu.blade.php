@@ -1,7 +1,10 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <span class="brand-text font-weight-light">{{ env('APP_NAME') }}</span>
+        {{-- <span class="brand-text font-weight-light">{{ env('APP_NAME') }}</span> --}}
+        <div style="max-width: 300px;" class="m-auto">
+            <img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid" style="filter: brightness(0) invert(1);">
+        </div>
     </a>
 
     <!-- Sidebar -->

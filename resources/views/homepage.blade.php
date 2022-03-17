@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ env('APP_NAME') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,19 +14,23 @@
 
     </head>
     <body>
-        <div class="container mt-5 text-center" style="color: #3B90D3;">
+        <div class="w-100 mt-5 text-center" style="color: #537EDB;">
             
-            <h1 class="mt-5">
-                <br><br>
+            <div style="max-width: 300px;" class="m-auto">
+                <img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid">
+            </div>
+            <h2 class="mt-5">
+                <br>
                 Nothing to see here..
-            </h1>
+            </h2>
+            <br>
             
-            <div class="mt-5 ml-3">
+            <div class="mt-3 ml-3">
                 <h5>If you want an offer for a car you can contact us</h5>
                 <h5>Email: sales@open-auction.nl</h5>
             </div>
             
-            <div class="col-md-10 m-auto">
+            <div class="col-md-6 m-auto">
                 <img src="{{ asset('/images/home-cars.png') }}" alt="Image with cars" class="img-fluid">
             </div>
             

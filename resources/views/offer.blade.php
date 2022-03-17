@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ env('APP_NAME') }} - {{ $offer->title }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -129,7 +129,11 @@
     </head>
     <body>
         <div class="container mt-2">
-            <br><br>
+            <br>
+            <div style="max-width: 300px;" class="m-auto">
+                <img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid">
+            </div>
+            <br>
             <div class="w-100 m-auto">
                 <div class="row d-flex align-items-stretch justify-content-between">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
