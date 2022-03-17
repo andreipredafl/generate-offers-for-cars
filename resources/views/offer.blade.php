@@ -44,8 +44,15 @@
             #mainCarousel .carousel__slide {
                 width: 100%;
                 padding: 0;
-                max-height: 550px;
+                max-height: 600px;
                 overflow-y: hidden;
+                display: flex;
+                align-content: middle;
+                justify-content: center
+            }
+            
+            #mainCarousel .carousel__slide img {
+                object-fit: cover;
             }
 
             #mainCarousel .carousel__button.is-prev {
@@ -121,7 +128,7 @@
         </style>
     </head>
     <body>
-        <div class="container mt-4">
+        <div class="container mt-2">
             <br><br>
             <div class="w-100 m-auto">
                 <div class="row d-flex align-items-stretch justify-content-between">
@@ -148,8 +155,18 @@
                                             Video cannot be played
                                         </iframe>
                                     </div> --}}
-                                    <a class="carousel__slide w-100 h-100" data-fancybox="gallery" href="https://www.youtube.com/watch?v=z2X2HaTvkl8">
+                                    {{-- example --}}
+                                    {{-- <a class="carousel__slide w-100 h-100" data-fancybox="gallery" href="https://www.youtube.com/watch?v=z2X2HaTvkl8">
                                         <img src="http://i3.ytimg.com/vi/z2X2HaTvkl8/hqdefault.jpg" class="w-100 h-100" />
+                                    </a> --}}
+                                    
+                                      <a class="carousel__slide w-100 h-100" data-fancybox="gallery" href="{{ $offer->video_url }}">
+                                        @php
+                                            $videoCode = substr($offer->video_url, strpos($offer->video_url, "?v=") + 3);
+                                        @endphp
+                                        @if($videoCode)
+                                            <img src="http://i3.ytimg.com/vi/{{$videoCode}}/hqdefault.jpg" class="w-100 h-100" />
+                                        @endif
                                       </a>
                                 @endif
                                 

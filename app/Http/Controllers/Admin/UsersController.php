@@ -27,7 +27,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $roles = Role::pluck('title', 'id');
+        $roles = Role::where('id', 1)->get()->pluck('title', 'id');
 
         return view('admin.users.create', compact('roles'));
     }
@@ -44,7 +44,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $roles = Role::pluck('title', 'id');
+        $roles = Role::where('id', 1)->get()->pluck('title', 'id');
 
         $user->load('roles');
 

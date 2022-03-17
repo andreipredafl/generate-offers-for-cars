@@ -16,7 +16,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-User">
+            <table class=" table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th width="10">
@@ -60,11 +60,11 @@
                             <td>
                                 {{ $user->email_verified_at ?? '' }}
                             </td>
-                            <td>
+                            {{-- <td>
                                 @foreach($user->roles as $key => $item)
                                     <span class="badge badge-info">{{ $item->title }}</span>
                                 @endforeach
-                            </td>
+                            </td> --}}
                             <td>
                                 @can('user_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">

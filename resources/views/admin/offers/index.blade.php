@@ -55,14 +55,14 @@
                                 {{ $offer->title ?? '' }}
                             </td>
                             <td >
-                                @foreach($offer->image->slice(0, 5) as $key => $media)
+                                @foreach($offer->image->slice(0, 3) as $key => $media)
                                     <a href="{{ $media->getUrl() }}" class="border" target="_blank" style="display: inline-block">
                                         <img src="{{ $media->getUrl('thumb') }}">
                                     </a>
                                 @endforeach
-                                @if(count($offer->image) > 5)
+                                @if(count($offer->image) > 3)
                                     <a class="ml-1" style="display: inline-block">
-                                        +{{ count($offer->image)-5 }} more
+                                        +{{ count($offer->image)-3 }} more
                                     </a>
                                 @endif
                             </td>

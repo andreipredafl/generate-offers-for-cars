@@ -4,14 +4,14 @@
     <div class="login-logo">
         <div class="login-logo">
             <a href="{{ route('admin.home') }}">
-                {{ trans('panel.site_title') }}
+                {{ env('APP_NAME') }}
             </a>
         </div>
     </div>
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">
-                {{ trans('global.login') }}
+                Admin login
             </p>
 
             @if(session()->has('message'))
@@ -62,13 +62,13 @@
             </form>
 
 
-            @if(Route::has('password.request'))
+            {{-- @if(Route::has('password.request'))
                 <p class="mb-1">
                     <a href="{{ route('password.request') }}">
                         {{ trans('global.forgot_password') }}
                     </a>
                 </p>
-            @endif
+            @endif --}}
             <p class="mb-1">
 
             </p>

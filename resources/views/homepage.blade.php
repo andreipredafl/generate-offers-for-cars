@@ -23,7 +23,7 @@
             
             <div class="mt-5 ml-3">
                 <h5>If you want an offer for a car you can contact us</h5>
-                <h5>Email: contact@domain.com</h5>
+                <h5>Email: sales@open-auction.nl</h5>
             </div>
             
             <div class="col-md-10 m-auto">

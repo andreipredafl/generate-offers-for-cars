@@ -51,3 +51,8 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 Route::get('/foo', function () {
     Artisan::call('storage:link');
 });
+
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
