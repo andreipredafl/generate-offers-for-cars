@@ -17,7 +17,9 @@
         <div class="w-100 mt-5 text-center" style="color: #537EDB;">
             
             <div style="max-width: 300px;" class="m-auto">
-                <img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid">
+                <a href="{{ route('homepage') }}">
+                	<img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid">
+				</a>
             </div>
             <h2 class="mt-5">
                 <br>

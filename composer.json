@@ -16,9 +16,10 @@
         "laravel/dusk": "^6.11",
         "laravel/framework": "^8.70.1",
         "laravel/tinker": "^2.5",
-        "yajra/laravel-datatables-oracle": "^9.18",
         "laravel/ui": "^3.3",
-        "spatie/laravel-medialibrary": "^8.7"
+        "marvinlabs/laravel-discord-logger": "^1.2",
+        "spatie/laravel-medialibrary": "^8.7",
+        "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
